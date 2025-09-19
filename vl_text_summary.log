@@ -1,0 +1,259 @@
+2025-09-18 16:36:50,362 - INFO - D:\vsc\edusystemdj\edusystemdj\urls.py changed, reloading.
+2025-09-18 16:40:48,784 - INFO - D:\vsc\edusystemdj\ai_aissistor\models.py changed, reloading.
+2025-09-18 16:40:56,859 - ERROR - Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\vsc\edusystemdj\ai_aissistor\views.py", line 39, in upload_homework
+    return render(request, 'ai_assistor/upload.html', {'form': form})
+  File "D:\Python\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Python\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Python\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ai_assistor/upload.html
+2025-09-18 16:47:32,593 - INFO - D:\vsc\edusystemdj\ai_aissistor\views.py changed, reloading.
+2025-09-18 16:47:45,633 - ERROR - Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\django\urls\base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'ai_assistor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\vsc\edusystemdj\ai_aissistor\views.py", line 39, in upload_homework
+    return render(request, 'ai_aissistor/upload.html', {'form': form})
+  File "D:\Python\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Python\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "D:\Python\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "D:\Python\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\Python\lib\site-packages\django\urls\base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'ai_assistor' is not a registered namespace
+2025-09-18 16:48:10,524 - INFO - D:\vsc\edusystemdj\ai_aissistor\views.py changed, reloading.
+2025-09-18 16:49:47,642 - INFO - D:\vsc\edusystemdj\edusystemdj\wsgi.py changed, reloading.
+2025-09-18 16:52:39,416 - ERROR - Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\django\urls\base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'ai_assistor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\vsc\edusystemdj\ai_assistor\views.py", line 39, in upload_homework
+    return render(request, 'ai_assistor/upload.html', {'form': form})
+  File "D:\Python\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Python\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "D:\Python\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "D:\Python\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\Python\lib\site-packages\django\urls\base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'ai_assistor' is not a registered namespace
+2025-09-18 16:54:06,055 - ERROR - Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\django\urls\base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'ai_assistor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\vsc\edusystemdj\ai_assistor\views.py", line 39, in upload_homework
+    return render(request, 'ai_assistor/upload.html', {'form': form})
+  File "D:\Python\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Python\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "D:\Python\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Python\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "D:\Python\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\Python\lib\site-packages\django\urls\base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'ai_assistor' is not a registered namespace
+2025-09-18 17:36:13,923 - INFO - D:\vsc\edusystemdj\edusystemdj\urls.py changed, reloading.
+2025-09-18 17:37:02,890 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 17:38:01,177 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 17:38:01,193 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\wrongquestion.png
+2025-09-18 17:38:05,505 - ERROR - Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\vsc\edusystemdj\ai_assistor\views.py", line 32, in upload_homework
+    manager = ErrorRecordManager()
+  File "D:\vsc\edusystemdj\ai_assistor\input_split_analysis.py", line 15, in __init__
+    self.conn = psycopg2.connect(
+  File "D:\Python\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5433 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-09-18 17:54:29,289 - INFO - D:\vsc\edusystemdj\edusystemdj\urls.py changed, reloading.
+2025-09-18 18:00:46,572 - WARNING - Not Found: /
+2025-09-18 18:00:46,754 - WARNING - Not Found: /favicon.ico
+2025-09-18 18:03:37,471 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 18:04:30,631 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 18:04:30,648 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\wrongquestion.png
+2025-09-18 18:30:10,118 - INFO - D:\vsc\edusystemdj\ai_assistor\input_split_analysis.py changed, reloading.
+2025-09-18 18:32:29,048 - INFO - D:\vsc\edusystemdj\ai_assistor\views.py changed, reloading.
+2025-09-18 18:49:42,859 - INFO - D:\vsc\edusystemdj\ai_assistor\views.py changed, reloading.
+2025-09-18 18:51:52,669 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 18:51:56,482 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 18:52:29,008 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 18:52:29,029 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\wrongquestion.png
+2025-09-18 18:52:29,375 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 18:52:29,375 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\wrongquestion.png
+2025-09-18 19:07:08,873 - INFO - D:\vsc\edusystemdj\ai_assistor\input_split_analysis.py changed, reloading.
+2025-09-18 19:08:09,002 - INFO - D:\vsc\edusystemdj\ai_assistor\input_split_analysis.py changed, reloading.
+2025-09-18 19:08:28,561 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 19:09:18,947 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 19:09:18,953 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\wrongquestion.png
+2025-09-18 19:15:03,894 - INFO - D:\vsc\edusystemdj\ai_assistor\input_split_analysis.py changed, reloading.
+2025-09-18 19:17:53,709 - INFO - D:\vsc\edusystemdj\ai_assistor\input_split_analysis.py changed, reloading.
+2025-09-18 19:19:02,932 - INFO - D:\vsc\edusystemdj\ai_assistor\views.py changed, reloading.
+2025-09-18 19:19:13,394 - INFO - D:\vsc\edusystemdj\ai_assistor\views.py changed, reloading.
+2025-09-18 19:24:31,582 - WARNING - Not Found: /favicon.ico
+2025-09-18 19:27:00,021 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 19:27:20,463 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 19:27:20,487 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\temp_wrongquestion.pdf.jpg
+2025-09-18 19:34:33,628 - INFO - D:\vsc\edusystemdj\ai_assistor\input_split_analysis.py changed, reloading.
+2025-09-18 19:35:04,938 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 19:35:23,981 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 19:35:23,983 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\temp_wrongquestion.pdf.jpg
+2025-09-18 19:38:49,467 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 19:39:11,989 - INFO - D:\vsc\edusystemdj\edusystemdj\urls.py changed, reloading.
+2025-09-18 19:39:20,197 - INFO - D:\vsc\edusystemdj\edusystemdj\urls.py changed, reloading.
+2025-09-18 19:39:26,211 - INFO - D:\vsc\edusystemdj\edusystemdj\settings.py changed, reloading.
+2025-09-18 19:39:32,194 - INFO - D:\vsc\edusystemdj\ai_assistor\views.py changed, reloading.
+2025-09-18 19:39:38,858 - INFO - D:\vsc\edusystemdj\ai_assistor\input_split_analysis.py changed, reloading.
+2025-09-18 19:40:02,958 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 19:40:37,911 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 19:40:37,915 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\wrongquestion.png
+2025-09-18 19:49:18,916 - INFO - D:\vsc\edusystemdj\ai_assistor\views.py changed, reloading.
+2025-09-18 19:49:42,147 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 19:50:04,677 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 19:50:04,688 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\temp_wrongquestion.pdf.jpg
+2025-09-18 19:52:48,680 - INFO - D:\vsc\edusystemdj\ai_assistor\views.py changed, reloading.
+2025-09-18 19:53:48,639 - INFO - VLTextSummarizer initialized successfully
+2025-09-18 19:54:10,766 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-18 19:54:10,793 - INFO - Successfully analyzed image: D:\vsc\edusystemdj\media\temp_wrongquestion.pdf.jpg
+2025-09-19 10:35:24,795 - WARNING - Not Found: /
+2025-09-19 11:15:33,088 - INFO - D:\vsc\edusystemdj\ai_assistor\forms.py changed, reloading.
+2025-09-19 11:17:32,227 - INFO - D:\vsc\edusystemdj\ai_assistor\views.py changed, reloading.
+2025-09-19 11:18:10,321 - INFO - D:\vsc\edusystemdj\ai_assistor\forms.py changed, reloading.
+2025-09-19 13:29:02,466 - INFO - D:\vsc\edusystemdj\ai_assistor\urls.py changed, reloading.
+2025-09-19 17:54:55,993 - INFO - D:\vsc\edusystem1\ai_assistor\forms.py changed, reloading.
+2025-09-19 17:55:56,082 - INFO - VLTextSummarizer initialized successfully
+2025-09-19 17:56:43,425 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-19 17:56:43,439 - INFO - Successfully analyzed image: D:\vsc\edusystem1\media\temp_wrongquestion.pdf.jpg
+2025-09-19 18:04:22,656 - INFO - D:\vsc\edusystem1\ai_assistor\views.py changed, reloading.
+2025-09-19 18:07:05,235 - INFO - VLTextSummarizer initialized successfully
+2025-09-19 18:07:34,595 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-19 18:07:34,595 - INFO - Successfully analyzed image: D:\vsc\edusystem1\media\temp_wrongquestion.pdf.jpg
+2025-09-19 18:09:32,665 - INFO - D:\vsc\edusystem1\ai_assistor\input_split_analysis.py changed, reloading.
+2025-09-19 18:09:39,567 - INFO - D:\vsc\edusystem1\ai_assistor\views.py changed, reloading.
+2025-09-19 18:09:48,750 - INFO - VLTextSummarizer initialized successfully
+2025-09-19 18:10:29,063 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-19 18:10:29,072 - INFO - Successfully analyzed image: D:\vsc\edusystem1\media\temp_wrongquestion.pdf.jpg
+2025-09-19 18:15:54,304 - INFO - VLTextSummarizer initialized successfully
+2025-09-19 18:16:19,353 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-19 18:16:19,361 - INFO - Successfully analyzed image: D:\vsc\edusystem1\media\temp_wrongquestion.pdf.jpg
+2025-09-19 18:16:22,856 - INFO - D:\vsc\edusystem1\ai_assistor\views.py changed, reloading.
+2025-09-19 18:16:25,412 - INFO - VLTextSummarizer initialized successfully
+2025-09-19 18:16:50,108 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-19 18:16:50,120 - INFO - Successfully analyzed image: D:\vsc\edusystem1\media\temp_wrongquestion.pdf.jpg
+2025-09-19 18:17:27,539 - INFO - D:\vsc\edusystem1\ai_assistor\views.py changed, reloading.
+2025-09-19 18:18:52,402 - INFO - D:\vsc\edusystem1\ai_assistor\views.py changed, reloading.
+2025-09-19 18:19:34,724 - INFO - VLTextSummarizer initialized successfully
+2025-09-19 18:20:17,254 - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-19 18:20:17,267 - INFO - Successfully analyzed image: D:\vsc\edusystem1\media\temp_wrongquestion.pdf.jpg
+2025-09-19 18:51:38,451 - INFO - D:\vsc\edusystem1\ai_assistor\views.py changed, reloading.
