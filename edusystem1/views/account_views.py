@@ -47,7 +47,7 @@ def custom_login(request):
                  return redirect(redirect_to)
             except User.DoesNotExist:
                  messages.error(request, "学号或密码错误XX")
-                 return render(request, "login.html")  # 重新渲染登录页面，显示错误信息  
+                # return render(request, "login.html")  # 重新渲染登录页面，显示错误信息  
             
             
         else:

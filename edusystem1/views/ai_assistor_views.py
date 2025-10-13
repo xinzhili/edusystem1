@@ -57,11 +57,12 @@ def upload_homework(request):
                     })
                 else:
                     messages.error(request, '错题保存失败')
+                    print("测试111")
                     return redirect('ai_assistor:upload')
             
             except Exception as e:
                 messages.error(request, f'处理错误: {str(e)}')
-                return redirect('ai_assistor:upload')
+             #  return redirect('ai_assistor:upload')
     else:
         Myform = UploadHomeworkForm()
     
