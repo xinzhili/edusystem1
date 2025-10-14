@@ -3,12 +3,12 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_protect
-from ..forms import StudentLoginForm
+from ..forms import StudentLoginForm , StudentForm
 from ..models import Student
 from django.urls import reverse
 from django.contrib.auth import user_logged_in
 from django.contrib.auth.models import update_last_login
-
+from django.utils import timezone
 
 
 def custom_login(request):
@@ -35,9 +35,7 @@ def custom_login(request):
             student = Student.objects.get(student_id=student_id)
             print(f"开始验证")
             try:
-                 print(f"开始验证2")
                  #user = User.objects.get(username=student_id, password=password) 
-                 print(f"开始验证3")
                  # 手动设置Session（替代login）
                  request.session['user_id'] = student_id
                  messages.success(request, f'欢迎 {student.name}！')
@@ -47,7 +45,7 @@ def custom_login(request):
                  return redirect(redirect_to)
             except User.DoesNotExist:
                  messages.error(request, "学号或密码错误XX")
-                # return render(request, "login.html")  # 重新渲染登录页面，显示错误信息  
+                 return render(request, "login.html")  # 重新渲染登录页面，显示错误信息  
             
             
         else:
@@ -60,5 +58,36 @@ def custom_login(request):
     
     return render(request, 'login.html', {'form': form,})
 
+
+def add_student(request):
+    """添加新学生的视图[3,4](@ref)"""
+    if request.method == 'POST':
+        form = StudentForm(request.POST)
+        if form.is_valid():
+            try:
+                
+                # 手动处理数据保存，确保student_id唯一性
+                student = form.save(commit=False)
+                print(student.student_id)  # 调试查看值
+                print(student.name)  # 调试查看值
+                student.created_at = timezone.now()
+                # 由于student_id是AutoField，通常不需要手动设置
+                # 但这里我们确保表单验证通过
+                student.save()
+                
+                messages.success(request, f'学号{student.student_id}号学生{student.name} 的信息已成功保存！请牢记学号！')
+            #   return redirect('student_list')  # 重定向到学生列表页
+                redirect_to = ('account:login')
+                print(f"Debug - redirect_to: {redirect_to}")  # 检查最终跳转目标
+                return redirect(redirect_to)
+   
+            except Exception as e:
+                messages.error(request, f'保存失败：{str(e)}')
+        else:
+            messages.error(request, '表单数据无效，请检查以下错误。')
+    else:
+        form = StudentForm()
+    
+    return render(request, 'register.html', {'form': form})
 
 

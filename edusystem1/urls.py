@@ -23,6 +23,7 @@ from .views import ai_assistor_views
 # 为每个应用创建单独的子 URL 配置
 account_patterns = ([
     path('login/', account_views.custom_login, name='login'),
+    path('register/', account_views.add_student, name='register'), 
 ], 'account')  # 第二个参数是 namespace
 
 ai_assistor_patterns = ([

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 # from django.contrib.postgres.fields import JSONField
 
 class ErrorRecord(models.Model):
@@ -13,7 +14,7 @@ class ErrorRecord(models.Model):
 # Create your models here.
 
 class Student(models.Model):
-    student_id = models.AutoField(primary_key=True)
+    student_id = models.IntegerField(primary_key=True)
     password = models.CharField(max_length=20)
     name = models.CharField(max_length=20)
     grade = models.SmallIntegerField()

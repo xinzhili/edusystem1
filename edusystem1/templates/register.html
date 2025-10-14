@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block title %}用户登录 - 学习管理系统{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加学生信息</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">添加学生信息</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- 显示消息 -->
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        
+                        <form method="post">
+                            {% csrf_token %}
+                            
+                            <!-- 显示表单错误 -->
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    {% for error in form.non_field_errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            
+                            <div class="row">
+                                <!-- 左侧字段 -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="{{ form.student_id.id_for_label }}" class="form-label">学号 *</label>
+                                        {{ form.student_id }}
+                                        {% if form.student_id.errors %}
+                                            <div class="text-danger">
+                                                {% for error in form.student_id.errors %}
+                                                    <small>{{ error }}</small>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="{{ form.password.id_for_label }}" class="form-label">密码 *</label>
+                                        {{ form.password }}
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="{{ form.name.id_for_label }}" class="form-label">姓名 *</label>
+                                        {{ form.name }}
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="{{ form.grade.id_for_label }}" class="form-label">年级 *</label>
+                                        {{ form.grade }}
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="{{ form.date_of_birth.id_for_label }}" class="form-label">出生日期 *</label>
+                                        {{ form.date_of_birth }}
+                                    </div>
+                                </div>
+                                
+                                <!-- 右侧字段 -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="{{ form.gender.id_for_label }}" class="form-label">性别 *</label>
+                                        {{ form.gender }}
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="{{ form.region.id_for_label }}" class="form-label">地区</label>
+                                        {{ form.region }}
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="{{ form.textbook_version.id_for_label }}" class="form-label">教材版本</label>
+                                        {{ form.textbook_version }}
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="{{ form.school.id_for_label }}" class="form-label">学校</label>
+                                        {{ form.school }}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="submit" class="btn btn-primary">提交学生信息</button>
+                            
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // 为所有输入字段添加Bootstrap样式类
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                if (!input.classList.contains('form-control')) {
+                    input.classList.add('form-control');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock %}
