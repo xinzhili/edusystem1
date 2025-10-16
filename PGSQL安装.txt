@@ -1,0 +1,91 @@
+第一步：
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+下载对应系统的安装包
+
+在环境变量的path 添加 安装目录\PostgreSQL\17\bin
+
+语言切换
+FILE(文件)->Preferences(配置)->Miscellaneous(杂项)->User interface（用户语言）
+
+校验
+pg_ctl --version 服务管理工具版本
+psql --version 客户端工具版本
+
+启动服务器
+pg_ctl start -D "D:\PostgreSQL\17\data" -l serverlog 
+
+检查服务器状态 （需要在在管理员权限下检查）
+pg_ctl status -D "D:\PostgreSQL\17\data"  
+或者在windows服务里查看postgresql-x64-17 是否正在运行
+
+
+创建数据库
+CREATE DATABASE "测试数据库"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LOCALE_PROVIDER = 'libc'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+查询表内容
+SELECT * FROM public."学生表"
+where "年龄" < 17
+ORDER BY "学号" ASC 
+
+表名 字段名 需要加双引号
+
+第二步
+安装visual studio Community 安装时勾选C++
+
+第三步
+下载pgvector 
+1）https://github.com/pgvector/pgvector/tags
+或者
+2）git clone --branch v0.8.0 https://github.com/pgvector/pgvector.git
+
+使用64 Native Tools Command Prompt for VS [2022]
+
+在pgvector 下载目录 
+set "PGROOT=D:\PostgreSQL\17"
+nmake /f Makefile.win clean
+nmake /f Makefile.win
+
+将下载的 vector.dll 文件复制到 PostgreSQL 的 lib 目录：
+
+通常路径为：C:\Program Files\PostgreSQL\<版本>\lib
+
+将 vector.control 和 vector--<版本>.sql 文件复制到扩展目录：
+
+通常路径为：C:\Program Files\PostgreSQL\<版本>\share\extension
+
+
+然后在PostgreSQL中执行CREATE EXTENSION vector;
+验证安装
+sql
+-- 检查扩展是否已安装
+SELECT * FROM pg_available_extensions WHERE name = 'vector';
+
+-- 创建测试表
+CREATE TABLE test_vectors (id serial PRIMARY KEY, vec vector(3));
+
+-- 插入测试数据
+INSERT INTO test_vectors (vec) VALUES ('[1,2,3]'), ('[4,5,6]');
+
+-- 查询测试
+SELECT * FROM test_vectors ORDER BY vec <-> '[3,1,2]';
+
+
+
+
+配置文件:
+
+D:\PostgreSQL\17\data -- pg_hba.conf
+
+底部添加配置 允许连接的客户端IP地址
+host    all             all             127.0.0.1/32            scram-sha-256 （认证方式）
+ 
+
+D:\PostgreSQL\17\data -- postgresql.conf
+监听地址 
+listen_addresses = '*'   （监听所有地址） / ‘localhost’(监听本机地址)
