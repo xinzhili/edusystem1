@@ -1,3 +1,4 @@
+### 环境配置和启动应用
 ### 1. 申请DASHSCOPE_API_KEY
     https://bailian.console.aliyun.com/?tab=model#/efm/model_experience_center/text
 ### 2.1 Docker 安装PGSQL
@@ -10,7 +11,16 @@
     - 详见requirements.txt
 ### 4. 创建数据库
     - 执行db_creation_3.py    
-### 5. python文件功能描述
+### 5. 启动应用
+    - 生成迁移文件 执行 python manage.py makemigrations
+    - 执行迁移     执行 python manage.py migrate
+    - 启动服务     执行 python manage.py runserver
+    - 打开网页     默认网址为 http://127.0.0.1:8000/
+    - 注册账号     通过主页上的注册按钮在注册页面添加学生账号，学号是登录用账号（唯一值）
+
+
+### 附加说明
+### 1. python文件功能描述
         - manage.py: ​项目管理命令行工具。这是您与项目交互最常用的工具，用于启动开发服务器
         (python manage.py runserver)、创建数据库迁移文件 (makemigrations)、执行迁
         (migrate)、创建超级用户等。  
@@ -44,7 +54,7 @@
         - templates/: ​HTML模板文件目录。Django使用模板来动态生成HTML页面。
         - ​media/: ​媒体文件目录。用来存储上传的学情分析源文件。  
         - corecode/: AI应用程序目录。
-### 6. AI应用程序功能描述 
+### 2. AI应用程序功能描述 
         - image_analyzer:调用千问视觉模型从PDF或者图片提取错题
         - input_split_analysis: 调用image_analyzer将图片错题保存再study_detail
         - summary_generation: function calling 从study_detail获取错题详情，调用大模型生
