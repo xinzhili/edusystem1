@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'edusystem1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# 数据库配置（使用 PostgreSQL）
+# 数据库配置（使用 PostgreSQL）@修改为自己搭建的数据库参数
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -91,11 +91,13 @@ DATABASES = {
     }
 }
 
-# 千问API配置
-QWEN_CONFIG = {
-    "api_key": "you api key ",  # 替换为实际API密钥
-    "model": "qwen-max-latest"
-}
+# API 配置
+
+DASHSCOPE_API_KEY = "sk-3579a66f5d2d4bf4800b26e6c1fa02f7" #修替换为实际API密钥
+BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+MODEL = "text-embedding-v4"
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

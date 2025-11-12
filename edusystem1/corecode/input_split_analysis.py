@@ -8,19 +8,22 @@ from pgvector.psycopg2 import register_vector
 from typing import List, Dict, Tuple
 from edusystem1.settings import DATABASES
 from .image_analyzer_new import VLTextSummarizer, analyze_document
+from django.conf import settings
 
 class ErrorRecordManager:
 
-    def __init__(self):
+    def __init__(self,using: str = "default"):
+        db = settings.DATABASES[using]
         self.conn = psycopg2.connect(
-            dbname="learning_db",
-            host="localhost",
-            port=5433,
-            user="postgres",
-            password="123456"
+            dbname=db["NAME"],
+            host=db["HOST"],
+            port=int(db["PORT"]),
+            user=db["USER"],
+            password=db["PASSWORD"]
         )
         register_vector(self.conn)
-        print("当前API Key:", os.getenv("DASHSCOPE_API_KEY"))
+        dashscope.api_key = settings.DASHSCOPE_API_KEY
+        print("当前API Key:", dashscope.api_key)
         with self.conn.cursor() as cur:
             cur.execute("SELECT current_database()")
             db_name = cur.fetchone()[0]
@@ -28,9 +31,10 @@ class ErrorRecordManager:
 
     def _generate_embeddings(self, texts: List[str]) -> List[np.ndarray]:
         """调用千问API生成向量"""
+        
         try:
             resp = dashscope.TextEmbedding.call(
-                model="text-embedding-v4",
+                model= settings.MODEL,
                 input=texts,
                 text_type="document"
             )

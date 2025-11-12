@@ -32,16 +32,17 @@ def upload_homework(request):
             
             # 创建media目录如果不存在
             os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
-            
+            print("step1")
             # 保存图片到media目录
             image_path = os.path.join(settings.MEDIA_ROOT, homework_image.name)
             with open(image_path, 'wb+') as destination:
                 for chunk in homework_image.chunks():
                     destination.write(chunk)
-            
+            print("step2")
             # 调用原始代码分析图片
             try:
                 # 分析图片并保存错题
+                print("step3")
                 error_data = analyze_document(image_path)
                 print("Error data received:", error_data)  # 调试输出
                 manager = ErrorRecordManager()

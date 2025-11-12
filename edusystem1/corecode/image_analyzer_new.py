@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 import json
 from pdf2image import convert_from_path
 import fitz
+from django.conf import settings
 
 # Configure logging
 logging.basicConfig(
@@ -37,14 +38,22 @@ class VLTextSummarizer:
     def __init__(self, api_key: Optional[str] = None):
         """Initialize the VLTextSummarizer with API credentials."""
         load_dotenv()  # Load environment variables from .env file
-        self.api_key = api_key or os.getenv('DASHSCOPE_API_KEY')
+        print("step4")
+    #    self.api_key = api_key or os.getenv('DASHSCOPE_API_KEY')
+        self.api_key = settings.DASHSCOPE_API_KEY
+        self.base_url = settings.BASE_URL
+        print(f"Debug: 传入的 api_key 值为: {self.api_key}")
+        
+        print(f"Debug: 环境变量 DASHSCOPE_API_KEY 值为: {os.getenv('DASHSCOPE_API_KEY')}")
         if not self.api_key:
             raise ValueError("API key must be provided either directly or through DASHSCOPE_API_KEY environment variable")
         
         self.client = OpenAI(
             api_key=self.api_key,
-            base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+            base_url=self.base_url
+       
         )
+        
         logger.info("VLTextSummarizer initialized successfully")
 
     def encode_image(self, image_path: str) -> str:
