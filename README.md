@@ -10,13 +10,16 @@
 ### 3. 安装pip依赖
     - 详见requirements.txt
 ### 4. 创建数据库
-    - 执行db_creation_3.py    
-### 5. 启动应用
+    - 执行db_creation_3.py
+### 5. 修改settings.py
+    - 在文件头部有DATABASES数组的参数配置和API密钥DASHSCOPE_API_KEY的配置 按照个人设置参数      
+### 6. 启动应用
     - 生成迁移文件 执行 python manage.py makemigrations
     - 执行迁移     执行 python manage.py migrate
     - 启动服务     执行 python manage.py runserver
     - 打开网页     默认网址为 http://127.0.0.1:8000/
     - 注册账号     通过主页上的注册按钮在注册页面添加学生账号，学号是登录用账号（唯一值）
+
 
 
 ### 附加说明

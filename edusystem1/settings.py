@@ -13,6 +13,29 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 
+# --------------------------------------------------------------------#
+# 以下部分需要根据个人设置进行参数配置
+# 数据库配置（使用 PostgreSQL）@修改为自己搭建的数据库参数
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'learning_db',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+# API 配置 目前使用千问的模型
+# 修改DASHSCOPE_API_KEY为实际API密钥
+DASHSCOPE_API_KEY = "XXXXXXXXX" 
+BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+MODEL = "text-embedding-v4"
+
+# --------------------------------------------------------------------#
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -79,23 +102,7 @@ WSGI_APPLICATION = 'edusystem1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# 数据库配置（使用 PostgreSQL）@修改为自己搭建的数据库参数
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'learning_db',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
 
-# API 配置
-
-DASHSCOPE_API_KEY = "sk-3579a66f5d2d4bf4800b26e6c1fa02f7" #修替换为实际API密钥
-BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-MODEL = "text-embedding-v4"
 
 
 
